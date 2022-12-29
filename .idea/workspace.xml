@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6d93a90b-c3ae-46e7-9809-e1221077d8b0" name="Default Changelist" comment="init: add renderWorkOutMarker and type" />
+    <list default="true" id="6d93a90b-c3ae-46e7-9809-e1221077d8b0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/script.js" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -13,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="812">
-              <caret line="103" column="33" lean-forward="true" selection-start-line="103" selection-start-column="33" selection-end-line="103" selection-end-column="34" />
+            <state relative-caret-position="318">
+              <caret line="80" column="16" selection-start-line="80" selection-start-column="16" selection-end-line="80" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -31,11 +34,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3268">
-              <caret line="172" column="14" selection-start-line="172" selection-start-column="14" selection-end-line="172" selection-end-column="14" />
+            <state relative-caret-position="361">
+              <caret line="262" column="49" selection-start-line="262" selection-start-column="49" selection-end-line="262" selection-end-column="49" />
+              <folding>
+                <element signature="e#0#6#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -66,7 +72,10 @@
   <component name="ProjectConfigurationFiles">
     <option name="files">
       <list>
-        <option value="$PROJECT_DIR$/.idea/mapty-guthub.io.iml" />
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+        <option value="$PROJECT_DIR$/.idea/misc.xml" />
+        <option value="$PROJECT_DIR$/.idea/modules.xml" />
+        <option value="$PROJECT_DIR$/.idea/mapty-github.io.iml" />
         <option value="$PROJECT_DIR$/.idea/vcs.xml" />
         <option value="$PROJECT_DIR$/.idea/misc.xml" />
         <option value="$PROJECT_DIR$/.idea/modules.xml" />
@@ -74,9 +83,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="169" />
-    <option name="y" value="28" />
-    <option name="width" value="1363" />
+    <option name="x" value="40" />
+    <option name="y" value="27" />
+    <option name="width" value="890" />
     <option name="height" value="974" />
   </component>
   <component name="ProjectView">
@@ -84,18 +93,18 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="mapty-guthub.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mapty-guthub.io" type="462c0819:PsiDirectoryNode" />
+              <item name="mapty-github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mapty-github.io" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -147,6 +156,8 @@
       <workItem from="1671788975160" duration="540000" />
       <workItem from="1671953618062" duration="295000" />
       <workItem from="1671955101386" duration="516000" />
+      <workItem from="1672237911220" duration="568000" />
+      <workItem from="1672303580149" duration="1448000" />
     </task>
     <task id="LOCAL-00001" summary="init: add Displaying a Map Using Leaflet Library">
       <created>1671624743584</created>
@@ -197,16 +208,24 @@
       <option name="project" value="LOCAL" />
       <updated>1671789511713</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="init: renering Workouts">
+      <created>1672238472043</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1672238472043</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14934000" />
+    <option name="totallyTimeSpent" value="16950000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="169" y="28" width="1363" height="974" extended-state="0" />
+    <frame x="40" y="27" width="890" height="974" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26566038" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.26566038" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -236,13 +255,14 @@
     <MESSAGE value="init: managing Workout Data: creating classes" />
     <MESSAGE value="init: add get data from form in _newWorkout" />
     <MESSAGE value="init: add renderWorkOutMarker and type" />
-    <option name="LAST_COMMIT_MESSAGE" value="init: add renderWorkOutMarker and type" />
+    <MESSAGE value="init: renering Workouts" />
+    <option name="LAST_COMMIT_MESSAGE" value="init: renering Workouts" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="812">
-          <caret line="103" column="33" lean-forward="true" selection-start-line="103" selection-start-column="33" selection-end-line="103" selection-end-column="34" />
+        <state relative-caret-position="318">
+          <caret line="80" column="16" selection-start-line="80" selection-start-column="16" selection-end-line="80" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -255,8 +275,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3268">
-          <caret line="172" column="14" selection-start-line="172" selection-start-column="14" selection-end-line="172" selection-end-column="14" />
+        <state relative-caret-position="361">
+          <caret line="262" column="49" selection-start-line="262" selection-start-column="49" selection-end-line="262" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#6#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
