@@ -73,6 +73,8 @@ const showSortBtn = document.querySelector('.show__sort__btns');
 const sortContainer = document.querySelector('.sort__buttons__container');
 const sortDivider = document.querySelector('.sort__divider');
 const overViewBtn = document.querySelector('.overview__btn');
+const clearAllBtn = document.querySelector('.clr__all__btn');
+const confMsg = document.querySelector('.confirmation__msg');
 
 
 class App {
@@ -93,6 +95,7 @@ class App {
         inputType.addEventListener('change', this._toggleElevationField);
         containerWorkouts.addEventListener('click', this._moveToPopup.bind(this));
         showSortBtn.addEventListener('click', this._toggleSortBtn.bind(this));
+        clearAllBtn.addEventListener('click', this._showDeleteMsg);
 
 
     };
@@ -332,6 +335,11 @@ _moveToPopup(e) {
             {padding: [70, 70] }
             );
     };
+
+    _showDeleteMsg(){
+        confMsg.classList.remove('msg__hidden');
+    }
+
 
 
 
