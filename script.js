@@ -70,7 +70,10 @@ const containerWorkouts = document.querySelector('.workouts');
 
 const validationMsg = document.querySelector('.validation__msg');
 const showSortBtn = document.querySelector('.show__sort__btns');
-const sortContainer = document.querySelector('.sort__buttons__container')
+const sortContainer = document.querySelector('.sort__buttons__container');
+const sortDivider = document.querySelector('.sort__divider');
+const overViewBtn = document.querySelector('.overview__btn');
+
 
 class App {
     #map;
@@ -90,6 +93,7 @@ class App {
         inputType.addEventListener('change', this._toggleElevationField);
         containerWorkouts.addEventListener('click', this._moveToPopup.bind(this));
         showSortBtn.addEventListener('click', this._toggleSortBtn.bind(this));
+
 
     };
 
@@ -124,6 +128,7 @@ class App {
         this.#workouts.forEach(work => {
             this._renderWorkOutMarker(work);
         });
+        overViewBtn.addEventListener('click', this._overView.bind(this));
 
         };
 
@@ -275,7 +280,7 @@ _renderWorkOutMarker(workout) {
         </li>
             `;
 
-        form.insertAdjacentHTML('afterend', html);
+        sortDivider.insertAdjacentHTML('afterend', html);
 
 
     };
@@ -301,7 +306,35 @@ _moveToPopup(e) {
 
     _toggleSortBtn() {
         sortContainer.classList.toggle('zero__height');
-    }
+    };
+
+    _overView() {
+    //    if there are no workouts return
+        if (this.#workouts.length === 0) return;
+        //    find lowest and highest lat and long to make map bounds that fit all markers
+        const latitudes = this.#workouts.map(workout => {
+            return workout.coords[0];
+        });
+        const longitudes = this.#workouts.map(workout => {
+            return workout.coords[1];
+        });
+        const minLat = Math.min(...latitudes);
+        const maxLat = Math.max(...latitudes);
+        const minLong = Math.min(...longitudes);
+        const maxLong = Math.max(...longitudes);
+
+     // fit bounds with coordinate
+        this.#map.fitBounds(
+            [
+                [maxLat, minLong],
+                [minLat, maxLong],
+            ],
+            {padding: [70, 70] }
+            );
+    };
+
+
+
 
 _setLocalStorage() {
     localStorage.setItem('workouts', JSON.stringify(this.#workouts));
