@@ -75,6 +75,9 @@ const sortDivider = document.querySelector('.sort__divider');
 const overViewBtn = document.querySelector('.overview__btn');
 const clearAllBtn = document.querySelector('.clr__all__btn');
 const confMsg = document.querySelector('.confirmation__msg');
+const yesBtn = document.querySelector('.yes__button');
+const noBtn = document.querySelector('.no__button');
+
 
 
 class App {
@@ -96,6 +99,10 @@ class App {
         containerWorkouts.addEventListener('click', this._moveToPopup.bind(this));
         showSortBtn.addEventListener('click', this._toggleSortBtn.bind(this));
         clearAllBtn.addEventListener('click', this._showDeleteMsg);
+        yesBtn.addEventListener('click', this._clearAll);
+        noBtn.addEventListener('click', function () {
+            confMsg.classList.add('msg__hidden');
+        })
 
 
     };
@@ -340,7 +347,11 @@ _moveToPopup(e) {
         confMsg.classList.remove('msg__hidden');
     }
 
-
+    _clearAll() {
+        localStorage.clear();
+        location.reload();
+        confMsg.classList.add('msg__hidden');
+}
 
 
 

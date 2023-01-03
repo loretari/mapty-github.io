@@ -22,8 +22,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
-              <caret line="82" column="53" selection-start-line="82" selection-start-column="40" selection-end-line="82" selection-end-column="53" />
+            <state relative-caret-position="3287">
+              <caret line="173" column="41" selection-start-line="173" selection-start-column="30" selection-end-line="173" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -40,8 +40,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="74" column="61" selection-start-line="74" selection-start-column="61" selection-end-line="74" selection-end-column="61" />
+            <state relative-caret-position="476">
+              <caret line="103" column="49" selection-start-line="103" selection-start-column="49" selection-end-line="103" selection-end-column="49" />
               <folding>
                 <element signature="e#0#6#0" expanded="true" />
               </folding>
@@ -158,7 +158,8 @@
       <workItem from="1672644292971" duration="210000" />
       <workItem from="1672727212675" duration="1795000" />
       <workItem from="1672729036725" duration="1782000" />
-      <workItem from="1672730848384" duration="659000" />
+      <workItem from="1672730848384" duration="1782000" />
+      <workItem from="1672732660424" duration="173000" />
     </task>
     <task id="LOCAL-00001" summary="init: add Displaying a Map Using Leaflet Library">
       <created>1671624743584</created>
@@ -265,11 +266,25 @@
       <option name="project" value="LOCAL" />
       <updated>1672729391019</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="init: add over view btn">
+      <created>1672731572432</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1672731572432</updated>
+    </task>
+    <task id="LOCAL-00017" summary="init: add clear all btn">
+      <created>1672732521044</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1672732521044</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27431000" />
+    <option name="totallyTimeSpent" value="28727000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="30" y="44" width="890" height="974" extended-state="0" />
@@ -314,9 +329,18 @@
     <MESSAGE value="init: fix style" />
     <MESSAGE value="init: add validation msg" />
     <MESSAGE value="init: add show Sort btn" />
-    <option name="LAST_COMMIT_MESSAGE" value="init: add show Sort btn" />
+    <MESSAGE value="init: add over view btn" />
+    <MESSAGE value="init: add clear all btn" />
+    <option name="LAST_COMMIT_MESSAGE" value="init: add clear all btn" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3287">
+          <caret line="173" column="41" selection-start-line="173" selection-start-column="30" selection-end-line="173" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3534">
@@ -324,17 +348,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="82" column="53" selection-start-line="82" selection-start-column="40" selection-end-line="82" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="74" column="61" selection-start-line="74" selection-start-column="61" selection-end-line="74" selection-end-column="61" />
+        <state relative-caret-position="476">
+          <caret line="103" column="49" selection-start-line="103" selection-start-column="49" selection-end-line="103" selection-end-column="49" />
           <folding>
             <element signature="e#0#6#0" expanded="true" />
           </folding>
