@@ -152,7 +152,7 @@ a:visited {
     justify-content: space-around;
     margin-bottom: 1rem;
     padding-top: 1rem;
-    /*overflow: hidden;*/
+    overflow: hidden;
     transition: all 1s;
     height: 4.2rem;
 }

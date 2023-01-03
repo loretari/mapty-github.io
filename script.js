@@ -69,6 +69,8 @@ const inputElevation = document.querySelector('.form__input--elevation');
 const containerWorkouts = document.querySelector('.workouts');
 
 const validationMsg = document.querySelector('.validation__msg');
+const showSortBtn = document.querySelector('.show__sort__btns');
+const sortContainer = document.querySelector('.sort__buttons__container')
 
 class App {
     #map;
@@ -87,6 +89,7 @@ class App {
         form.addEventListener('submit', this._newWorkout.bind(this));
         inputType.addEventListener('change', this._toggleElevationField);
         containerWorkouts.addEventListener('click', this._moveToPopup.bind(this));
+        showSortBtn.addEventListener('click', this._toggleSortBtn.bind(this));
 
     };
 
@@ -295,6 +298,10 @@ _moveToPopup(e) {
 //    using the public interface
     workout.click();
 }
+
+    _toggleSortBtn() {
+        sortContainer.classList.toggle('zero__height');
+    }
 
 _setLocalStorage() {
     localStorage.setItem('workouts', JSON.stringify(this.#workouts));
