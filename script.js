@@ -68,6 +68,8 @@ const inputCadence = document.querySelector('.form__input--cadence');
 const inputElevation = document.querySelector('.form__input--elevation');
 const containerWorkouts = document.querySelector('.workouts');
 
+const validationMsg = document.querySelector('.validation__msg');
+
 class App {
     #map;
     #mapEvent;
@@ -148,6 +150,16 @@ const validInputs = (...inputs) => inputs.every(inp => Number.isFinite(inp));
 
 const allPositive = (...inputs) => inputs.every(inp => inp > 0);
 
+//validation msg if inputs don't pass validation and hide msg after 4s
+const display = function(){
+    validationMsg.classList.add('msg__show');
+    setTimeout(() => {
+        validationMsg.classList.remove('msg__show');
+    }, 4000);
+};
+
+const displayValidationMsg = display.bind(this);
+
     e.preventDefault();
 
 
@@ -164,7 +176,7 @@ const allPositive = (...inputs) => inputs.every(inp => inp > 0);
 
     // Check if data is valid
     if (!validInputs(distance, duration, cadence) || !allPositive(distance, duration, cadence) )
-return alert('Inputs have to be positive number!');
+return displayValidationMsg();
 
     workout = new Running([lat, lng], distance, duration, cadence);
     }
@@ -173,7 +185,7 @@ if (type === 'cycling') {
     const elevation = +inputElevation.value;
 
     if (!validInputs(distance, duration, elevation) || !allPositive(distance, duration))
-return alert('Inputs have to be positive number!')
+return displayValidationMsg()
 
     workout = new Cycling([lat, lng], distance, duration, elevation);
 
@@ -219,7 +231,7 @@ _renderWorkOutMarker(workout) {
     <li class="workout workout--${workout.type}" data-id="${workout.id}">
           <h2 class="workout__title">${workout.description}</h2>
           <div class="workout__details">
-            <span class="workout__icon">${workout.type === 'running' ? '🏃' : '♂‍'}</span>
+            <span class="workout__icon">${workout.type === 'running' ? '🏃‍♂️' : '🚴‍♀'}</span>
             <span class="workout__value">${workout.distance}</span>
             <span class="workout__unit">km</span>
           </div>
