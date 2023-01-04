@@ -16,7 +16,7 @@ clicks = 0
         //    prettier-ignore
         const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-        this.description = `${this.type[0].toUpperCase()}${this.type.slice(1)} on ${months[this.date.getMonth()]} ${this.date.getDate()}`;
+        this.description = `${this.type[0].toUpperCase()}${this.type.slice(1)} ${this.distance} km on ${months[this.date.getMonth()]} ${this.date.getDate()} (${this.date.getHours()} : ${this.date.getMinutes()})`;
 
     };
 click(){
@@ -86,6 +86,7 @@ class App {
     #mapZoomLevel = 13;
     #workouts = [];
 
+
     constructor () {
         // Get user's position
         this._getPosition();
@@ -96,16 +97,46 @@ class App {
         //Attach event handlers
         form.addEventListener('submit', this._newWorkout.bind(this));
         inputType.addEventListener('change', this._toggleElevationField);
-        containerWorkouts.addEventListener('click', this._moveToPopup.bind(this));
+        containerWorkouts.addEventListener('click', this._handleWorkoutClick.bind(this));
         showSortBtn.addEventListener('click', this._toggleSortBtn.bind(this));
         clearAllBtn.addEventListener('click', this._showDeleteMsg);
         yesBtn.addEventListener('click', this._clearAll);
         noBtn.addEventListener('click', function () {
             confMsg.classList.add('msg__hidden');
+
         })
 
 
     };
+
+    _handleWorkoutClick(e) {
+        const workoutEl = e.target.closest('.workout');
+        console.log(workoutEl);
+
+        if (!workoutEl) return;
+
+        const workout = this.#workouts.find(work => work.id === workoutEl.dataset.id);
+        console.log(workout);
+
+
+        if (e.target.classList.contains('remove__btn'))  {
+            this._removeWorkout(workoutEl);
+
+            this._setLocalStorage();
+            return;
+        }
+        
+        this.#map.setView(workout.coords, this.#mapZoomLevel, {
+            animate: true,
+            pan: {
+                duration: 1,
+            },
+        });
+
+//    using the public interface
+//         workout.click();
+    }
+
 
     _getPosition() {
         if (navigator.geolocation)
@@ -246,73 +277,67 @@ _renderWorkOutMarker(workout) {
 
     _renderWorkout(workout) {
         let html = `
-    <li class="workout workout--${workout.type}" data-id="${workout.id}">
-          <h2 class="workout__title">${workout.description}</h2>
-          <div class="workout__details">
-            <span class="workout__icon">${workout.type === 'running' ? '🏃‍♂️' : '🚴‍♀'}</span>
-            <span class="workout__value">${workout.distance}</span>
-            <span class="workout__unit">km</span>
-          </div>
-          <div class="workout__details">
-            <span class="workout__icon">⏱</span>
-            <span class="workout__value">${workout.duration}</span>
-            <span class="workout__unit">min</span>
-          </div>
+      <li class="workout workout--${workout.type}" data-id="${workout.id}">
+        <h2 class="workout__title">${workout.description}</h2>
+        <div class="workout__details">
+          <span class="workout__icon">${
+            workout.type === 'running' ? '🏃‍♂️' : '🚴‍♀️'
+            }</span>
+          <span class="workout__value">${workout.distance}</span>
+          <span class="workout__unit">km</span>
+        </div>
+        <div class="workout__details">
+          <span class="workout__icon">⏱</span>
+          <span class="workout__value">${workout.duration}</span>
+          <span class="workout__unit">min</span>
+        </div>
     `;
 
         if (workout.type === 'running')
             html += `
-         <div class="workout__details">
-            <span class="workout__icon">⚡️</span>
-            <span class="workout__value">${workout.pace.toFixed(1)}</span>
-            <span class="workout__unit">min/km</span>
-          </div>
-          <div class="workout__details">
-            <span class="workout__icon">🦶🏼</span>
-            <span class="workout__value">${workout.cadence}</span>
-            <span class="workout__unit">spm</span>
-          </div>
-        </li>
-        `;
+        <div class="workout__details">
+          <span class="workout__icon">⚡️</span>
+          <span class="workout__value">${workout.pace.toFixed(1)}</span>
+          <span class="workout__unit">min/km</span>
+        </div>
+        <div class="workout__details">
+          <span class="workout__icon">🦶🏼</span>
+          <span class="workout__value">${workout.cadence}</span>
+          <span class="workout__unit">spm</span>
+        </div>
+        <button class = "remove__btn">x</button>
+      </li>
+      `;
 
         if (workout.type === 'cycling')
             html += `
-            <div class="workout__details">
-            <span class="workout__icon">⚡️</span>
-            <span class="workout__value">${workout.speed.toFixed(1)}</span>
-            <span class="workout__unit">km/h</span>
-          </div>
-          <div class="workout__details">
-            <span class="workout__icon">⛰</span>
-            <span class="workout__value">${workout.elevationGain}</span>
-            <span class="workout__unit">m</span>
-          </div>
-        </li>
-            `;
+        <div class="workout__details">
+          <span class="workout__icon">⚡️</span>
+          <span class="workout__value">${workout.speed.toFixed(1)}</span>
+          <span class="workout__unit">km/h</span>
+        </div>
+        <div class="workout__details">
+          <span class="workout__icon">⛰</span>
+          <span class="workout__value">${workout.elevationGain}</span>
+          <span class="workout__unit">m</span>
+        </div>
+        <button class = "remove__btn">x</button>
+
+      </li>
+      `;
 
         sortDivider.insertAdjacentHTML('afterend', html);
 
-
+        this._setLocalStorage();
     };
-_moveToPopup(e) {
-    const workoutEl = e.target.closest('.workout');
-    console.log(workoutEl);
 
-    if (!workoutEl) return;
+    _removeWorkout(workoutEl, workoutIndex) {
+    //    1.remove from list
+        workoutEl.remove();
 
-    const workout = this.#workouts.find(work => work.id === workoutEl.dataset.id);
-    console.log(workout);
+    }
 
-    this.#map.setView(workout.coords, this.#mapZoomLevel, {
-        animate: true,
-        pan: {
-            duration: 1,
-        },
-    });
 
-//    using the public interface
-    workout.click();
-}
 
     _toggleSortBtn() {
         sortContainer.classList.toggle('zero__height');

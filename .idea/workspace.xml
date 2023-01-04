@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6d93a90b-c3ae-46e7-9809-e1221077d8b0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,8 +24,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3287">
-              <caret line="173" column="41" selection-start-line="173" selection-start-column="30" selection-end-line="173" selection-end-column="41" />
+            <state relative-caret-position="19">
+              <caret line="28" column="7" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -31,8 +33,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3534">
-              <caret line="186" column="14" selection-start-line="186" selection-start-column="1" selection-end-line="186" selection-end-column="14" />
+            <state relative-caret-position="2413">
+              <caret line="127" column="12" selection-start-line="127" selection-start-column="1" selection-end-line="127" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -40,8 +42,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="103" column="49" selection-start-line="103" selection-start-column="49" selection-end-line="103" selection-end-column="49" />
+            <state relative-caret-position="234">
+              <caret line="73" column="44" selection-start-line="73" selection-start-column="44" selection-end-line="73" selection-end-column="44" />
               <folding>
                 <element signature="e#0#6#0" expanded="true" />
               </folding>
@@ -86,16 +88,29 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="30" />
-    <option name="y" value="44" />
-    <option name="width" value="890" />
+    <option name="x" value="701" />
+    <option name="y" value="27" />
+    <option name="width" value="968" />
     <option name="height" value="974" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="mapty-github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mapty-github.io" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -159,7 +174,13 @@
       <workItem from="1672727212675" duration="1795000" />
       <workItem from="1672729036725" duration="1782000" />
       <workItem from="1672730848384" duration="1782000" />
-      <workItem from="1672732660424" duration="173000" />
+      <workItem from="1672732660424" duration="278000" />
+      <workItem from="1672814880487" duration="1781000" />
+      <workItem from="1672816688668" duration="1858000" />
+      <workItem from="1672818576372" duration="1783000" />
+      <workItem from="1672820385755" duration="1783000" />
+      <workItem from="1672822196605" duration="1784000" />
+      <workItem from="1672824013024" duration="1080000" />
     </task>
     <task id="LOCAL-00001" summary="init: add Displaying a Map Using Leaflet Library">
       <created>1671624743584</created>
@@ -280,17 +301,24 @@
       <option name="project" value="LOCAL" />
       <updated>1672732521044</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="init: add yes and no msg btns">
+      <created>1672732932992</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1672732932992</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28727000" />
+    <option name="totallyTimeSpent" value="38901000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="30" y="44" width="890" height="974" extended-state="0" />
+    <frame x="701" y="27" width="968" height="974" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.26525822" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.26344085" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -331,27 +359,37 @@
     <MESSAGE value="init: add show Sort btn" />
     <MESSAGE value="init: add over view btn" />
     <MESSAGE value="init: add clear all btn" />
-    <option name="LAST_COMMIT_MESSAGE" value="init: add clear all btn" />
+    <MESSAGE value="init: add yes and no msg btns" />
+    <option name="LAST_COMMIT_MESSAGE" value="init: add yes and no msg btns" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3287">
-          <caret line="173" column="41" selection-start-line="173" selection-start-column="30" selection-end-line="173" selection-end-column="41" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/icon.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/icons8-pointer-67.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logo.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3534">
-          <caret line="186" column="14" selection-start-line="186" selection-start-column="1" selection-end-line="186" selection-end-column="14" />
+        <state relative-caret-position="2413">
+          <caret line="127" column="12" selection-start-line="127" selection-start-column="1" selection-end-line="127" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="28" column="7" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="103" column="49" selection-start-line="103" selection-start-column="49" selection-end-line="103" selection-end-column="49" />
+        <state relative-caret-position="234">
+          <caret line="73" column="44" selection-start-line="73" selection-start-column="44" selection-end-line="73" selection-end-column="44" />
           <folding>
             <element signature="e#0#6#0" expanded="true" />
           </folding>
