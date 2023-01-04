@@ -85,6 +85,7 @@ class App {
     #mapEvent;
     #mapZoomLevel = 13;
     #workouts = [];
+    #markers = [];
 
 
     constructor () {
@@ -118,9 +119,10 @@ class App {
         const workout = this.#workouts.find(work => work.id === workoutEl.dataset.id);
         console.log(workout);
 
+        const workoutIndex = this.#workouts.indexOf(workout);
 
         if (e.target.classList.contains('remove__btn'))  {
-            this._removeWorkout(workoutEl);
+            this._removeWorkout(workoutEl, workoutIndex);
 
             this._setLocalStorage();
             return;
@@ -259,7 +261,7 @@ this._renderWorkOutMarker(workout);
 
 };
 _renderWorkOutMarker(workout) {
-    L.marker(workout.coords)
+    const layer = L.marker(workout.coords)
         .addTo(this.#map)
         .bindPopup(
             L.popup({
@@ -272,7 +274,13 @@ _renderWorkOutMarker(workout) {
         )
         .setPopupContent(
             `${workout.type === 'running' ? '🏃‍♂️' : '🚴‍♀️'} ${workout.description}`)
+
         .openPopup();
+
+//    put the marker inside markers array
+    this.#markers.push(layer);
+
+
 }
 
     _renderWorkout(workout) {
@@ -332,8 +340,17 @@ _renderWorkOutMarker(workout) {
     };
 
     _removeWorkout(workoutEl, workoutIndex) {
-    //    1.remove from list
+    //    1. remove from list
         workoutEl.remove();
+
+    //    2. remove from array
+        this.#workouts.splice(workoutIndex, 1);
+
+    //    3. remove from map
+        this.#markers[workoutIndex].remove();
+
+    //    4. remove from marker array
+        this.#markers.splice(workoutIndex, 1);
 
     }
 
