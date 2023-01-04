@@ -104,20 +104,18 @@ class App {
         yesBtn.addEventListener('click', this._clearAll);
         noBtn.addEventListener('click', function () {
             confMsg.classList.add('msg__hidden');
-
-        })
+        });
+        sortContainer.addEventListener('click', this._sortAndRender.bind(this));
 
 
     };
 
     _handleWorkoutClick(e) {
         const workoutEl = e.target.closest('.workout');
-        console.log(workoutEl);
 
         if (!workoutEl) return;
 
         const workout = this.#workouts.find(work => work.id === workoutEl.dataset.id);
-        console.log(workout);
 
         const workoutIndex = this.#workouts.indexOf(workout);
 
@@ -139,6 +137,84 @@ class App {
 //         workout.click();
     }
 
+    _sortAndRender(e) {
+        const element = e.target.closest('.sort__button');
+        let currentDirection = 'descending' //default
+        if (!element) return;
+
+        const arrow = element.querySelector('.arrow');
+        const type = element.dataset.type;
+
+    //    set all arrows to default state (down)
+        sortContainer.querySelectorAll('.arrow').forEach((e) => e.classList.remove('arrow__up'));
+
+    //    get which direction to sort
+        const typeValues = this.#workouts.map((workout) => {
+            return workout[type];
+        });
+
+        const sortedAscending = typeValues.slice().sort(function (a, b) {
+            return a - b;
+        }).join('');
+
+        const sortedDescending = typeValues.slice().sort(function (a, b) {
+            return b - a;
+        }).join('');
+
+        // compare sortedAscending array with values from #workout array to check how are they sorted
+    //    1. case 1 ascending
+        if (typeValues.join('') === sortedAscending) {
+            currentDirection = 'ascending';
+
+            arrow.classList.add('arrow__up');
+        };
+
+    //    2. case 2 descending
+        if (typeValues.join('') === sortedDescending) {
+            currentDirection = 'descending';
+
+            arrow.classList.remove('arrow__up');
+        }
+
+    //    sort main workouts array
+        this._sortArray(this.#workouts, currentDirection, type)
+
+
+    //    Re-Render
+    // clear rendered workouts from DOM
+     containerWorkouts.querySelectorAll('.workout').forEach((workout) => workout.remove());
+
+        // clear workouts from map(to prevent bug in array order when deleting a single workout)
+        this.#markers.forEach((marker) => marker.remove());
+
+    //  clear array
+    this.#markers = []
+    //    render list all again sorted
+        this.#workouts.forEach((workout) => {
+            this._renderWorkout(workout)
+
+            //creat new markers and render them on map
+            this._renderWorkOutMarker(workout)
+        })
+
+
+
+    }
+
+    _sortArray(array, currentDirection, type) {
+    //    sort opposite to the currentDirection
+     if (currentDirection === 'ascending') {
+        array.sort(function (a, b) {
+        return b[type] - a[type];
+    });
+
+};
+     if (currentDirection === 'descending') {
+        array.sort(function (a, b) {
+        return a[type] - b[type]
+    });
+};
+    }
 
     _getPosition() {
         if (navigator.geolocation)
@@ -183,7 +259,7 @@ class App {
 
     _hiddenForm() {
         //    Empty inputs
-        inputDistance.value = inputCadence.value = inputDuration.value = '';
+        inputDistance.value = inputCadence.value = inputDuration.value = inputElevation.value = '';
 
         form.style.display = 'none';
         form.classList.add('hidden');
@@ -194,6 +270,7 @@ class App {
 _toggleElevationField () {
     inputElevation.closest('.form__row').classList.toggle('form__row--hidden');
     inputCadence.closest('.form__row').classList.toggle('form__row--hidden');
+
 };
 
 _newWorkout(e) {
@@ -202,11 +279,12 @@ const validInputs = (...inputs) => inputs.every(inp => Number.isFinite(inp));
 const allPositive = (...inputs) => inputs.every(inp => inp > 0);
 
 //validation msg if inputs don't pass validation and hide msg after 4s
-const display = function(){
+const display = function () {
     validationMsg.classList.add('msg__show');
     setTimeout(() => {
         validationMsg.classList.remove('msg__show');
     }, 4000);
+
 };
 
 const displayValidationMsg = display.bind(this);
@@ -216,8 +294,8 @@ const displayValidationMsg = display.bind(this);
 
     // Get data from form
     const type = inputType.value;
-    const distance = +inputDistance.value;
-    const duration = +inputDuration.value;
+    const distance = +inputDistance.value; //converting to number with +
+    const duration = +inputDuration.value; //converting to number with +
     const {lat, lng} = this.#mapEvent.latlng;
     let workout;
 
@@ -241,12 +319,12 @@ return displayValidationMsg()
     workout = new Cycling([lat, lng], distance, duration, elevation);
 
 }
-    // Add new object to workout array
-this.#workouts.push(workout);
 
     // Render workout on map as marker
 this._renderWorkOutMarker(workout);
 
+    // Add new object to workout array
+    this.#workouts.push(workout);
 
     // Render workout on list
     this._renderWorkout(workout);

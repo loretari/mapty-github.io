@@ -22,8 +22,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="28" column="7" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
+            <state relative-caret-position="2052">
+              <caret line="108" column="65" selection-start-line="108" selection-start-column="53" selection-end-line="108" selection-end-column="65" />
             </state>
           </provider>
         </entry>
@@ -31,8 +31,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2413">
-              <caret line="127" column="12" selection-start-line="127" selection-start-column="1" selection-end-line="127" selection-end-column="12" />
+            <state relative-caret-position="2185">
+              <caret line="115" column="17" selection-start-line="115" selection-start-column="17" selection-end-line="115" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -40,8 +40,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="747">
-              <caret line="352" column="46" selection-start-line="352" selection-start-column="46" selection-end-line="352" selection-end-column="46" />
+            <state relative-caret-position="133">
+              <caret line="139" column="7" lean-forward="true" selection-start-line="139" selection-start-column="7" selection-end-line="139" selection-end-column="7" />
               <folding>
                 <element signature="e#0#6#0" expanded="true" />
               </folding>
@@ -86,9 +86,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="900" />
-    <option name="y" value="39" />
-    <option name="width" value="968" />
+    <option name="x" value="847" />
+    <option name="y" value="37" />
+    <option name="width" value="938" />
     <option name="height" value="974" />
   </component>
   <component name="ProjectView">
@@ -166,7 +166,13 @@
       <workItem from="1672820385755" duration="1783000" />
       <workItem from="1672822196605" duration="1784000" />
       <workItem from="1672824013024" duration="1703000" />
-      <workItem from="1672831798418" duration="865000" />
+      <workItem from="1672831798418" duration="1745000" />
+      <workItem from="1672833915889" duration="905000" />
+      <workItem from="1672836270126" duration="1785000" />
+      <workItem from="1672838194798" duration="1787000" />
+      <workItem from="1672840127855" duration="1783000" />
+      <workItem from="1672841940289" duration="1783000" />
+      <workItem from="1672843752610" duration="1185000" />
     </task>
     <task id="LOCAL-00001" summary="init: add Displaying a Map Using Leaflet Library">
       <created>1671624743584</created>
@@ -301,15 +307,21 @@
       <option name="project" value="LOCAL" />
       <updated>1672825121530</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="init: add #markers and remove from map">
+      <created>1672832760779</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1672832760779</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40389000" />
+    <option name="totallyTimeSpent" value="50497000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="900" y="39" width="968" height="974" extended-state="0" />
-    <editor active="true" />
+    <frame x="847" y="37" width="938" height="974" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.26344085" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -354,7 +366,9 @@
     <MESSAGE value="init: add clear all btn" />
     <MESSAGE value="init: add yes and no msg btns" />
     <MESSAGE value="init: add remove btn" />
-    <option name="LAST_COMMIT_MESSAGE" value="init: add remove btn" />
+    <MESSAGE value="init: add #markers and remove from map" />
+    <MESSAGE value="init: add _sortAndRe" />
+    <option name="LAST_COMMIT_MESSAGE" value="init: add _sortAndRe" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/icon.png">
@@ -368,22 +382,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="28" column="7" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
+        <state relative-caret-position="2052">
+          <caret line="108" column="65" selection-start-line="108" selection-start-column="53" selection-end-line="108" selection-end-column="65" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2413">
-          <caret line="127" column="12" selection-start-line="127" selection-start-column="1" selection-end-line="127" selection-end-column="12" />
+        <state relative-caret-position="2185">
+          <caret line="115" column="17" selection-start-line="115" selection-start-column="17" selection-end-line="115" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="747">
-          <caret line="352" column="46" selection-start-line="352" selection-start-column="46" selection-end-line="352" selection-end-column="46" />
+        <state relative-caret-position="133">
+          <caret line="139" column="7" lean-forward="true" selection-start-line="139" selection-start-column="7" selection-end-line="139" selection-end-column="7" />
           <folding>
             <element signature="e#0#6#0" expanded="true" />
           </folding>
